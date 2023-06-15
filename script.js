@@ -71,7 +71,7 @@ function dateTime() {
     let dy = currentDate.getDay();
     let dt = currentDate.getDate();
     let mt = currentDate.getMonth();
-    let yr = currentDate.getFullYear();
+    let yrr = currentDate.getFullYear();
 
     daysInWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     day.innerText = daysInWeek[dy];
@@ -81,7 +81,7 @@ function dateTime() {
     month.innerText = mt;
     month.innerText = mt < 10 ? "0" + mt : mt
 
-    year.innerText = yr;
+    year.innerText = yrr;
 }
 setInterval(dateTime, 1000);
 dateTime()
