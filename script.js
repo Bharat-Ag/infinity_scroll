@@ -36,16 +36,24 @@ window.addEventListener("scroll", () => {
     }
 })
 
-
 let timeContainer = document.getElementsByClassName("timeContainer");
 
 let day = document.querySelector(".Day")
 let date = document.querySelector(".date")
 let month = document.querySelector(".month")
 let year = document.querySelector(".year")
+let session = document.querySelector(".session")
+
+function formatTime(value) {
+    if (value < 10) {
+        return "0" + value;
+    }
+    else {
+        return value.toString();
+    }
+}
 
 function dateTime() {
-
     // ---time section----
     let currentDate = new Date();
     const time = document.querySelector(".tm");
@@ -53,17 +61,11 @@ function dateTime() {
     let min = currentDate.getMinutes();
     let sec = currentDate.getSeconds();
 
-    time.textContent = `${hrs} : ${min} : ${sec}`;
-
-    if (hrs < 10) {
-        time.textContent = `0${hrs} : ${min} : 0${sec}`;
-    }
-    if (min < 10) {
-        time.textContent = `${hrs} : 0${min} : 0${sec}`;
-    }
-    if (sec < 10) {
-        time.textContent = `${hrs} : ${min} : 0${sec}`;
-    }
+    hrs = formatTime(hrs);
+    min = formatTime(min);
+    sec = formatTime(sec);
+    session.textContent = hrs >= 12 ? " PM " : " AM "
+    time.textContent = (hrs > 12) ? `0${hrs - 12} : ${min} : ${sec}` : `${hrs} : ${min} : ${sec}`;
 
     // ---date section----
     let dy = currentDate.getDay();
@@ -71,20 +73,15 @@ function dateTime() {
     let mt = currentDate.getMonth();
     let yr = currentDate.getFullYear();
 
-    // days----------
     daysInWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     day.innerText = daysInWeek[dy];
 
-    // date----------
-
     date.innerText = dt < 10 ? "0" + dt : dt;
-
-    // month----------
 
     month.innerText = mt;
     month.innerText = mt < 10 ? "0" + mt : mt
 
     year.innerText = yr;
 }
-setInterval(dateTime, 100);
-dateTime() 
+setInterval(dateTime, 1000);
+dateTime()
