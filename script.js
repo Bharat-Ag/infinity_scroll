@@ -14,7 +14,6 @@ const getPost = async () => {
             <h2 class="title">${item.title}</h2>
             <p class="details">${item.body}</p>
         </div>`
-
         container.insertAdjacentHTML('beforeend', htmlData)
     })
 }
@@ -29,9 +28,7 @@ const showData = () => {
 
 window.addEventListener("scroll", () => {
     let { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-
     if (scrollTop + clientHeight >= scrollHeight) {
-        console.log("bottom");
         showData();
     }
 })
