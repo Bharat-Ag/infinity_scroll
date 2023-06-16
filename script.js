@@ -6,7 +6,6 @@ let postCount = 1;
 const getPost = async () => {
     const response = await fetch(`http://jsonplaceholder.typicode.com/posts?_limit=${postLimit}$_page=${pageCount}`)
     const data = await response.json();
-
     data.map(item => {
         const htmlData = `
         <div class="posts">
@@ -18,14 +17,11 @@ const getPost = async () => {
     })
 }
 getPost();
-
 const showData = () => {
     setTimeout(() => {
-        postCount++;
         getPost();
     }, 200)
 }
-
 window.addEventListener("scroll", () => {
     let { scrollHeight, scrollTop, clientHeight } = document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight) {
