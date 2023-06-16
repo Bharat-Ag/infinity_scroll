@@ -22,6 +22,7 @@ a {
 
 .main {
     position: relative;
+    padding-bottom: 2rem;
 }
 
 .navB {
@@ -89,7 +90,7 @@ a {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 10px;
+    bottom: 15px;
     gap: 1rem;
 }
 
