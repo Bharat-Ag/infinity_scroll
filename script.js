@@ -1,11 +1,16 @@
 let container = document.querySelector(".container")
+let loading = document.querySelector(".loading")
+
 let postLimit = 4;
 let pageCount = 1;
 let postCount = 1;
 
 const getPost = async () => {
+
     const response = await fetch(`http://jsonplaceholder.typicode.com/posts?_limit=${postLimit}$_page=${pageCount}`)
     const data = await response.json();
+
+    console.log(data);
     data.map(item => {
         const htmlData = `
         <div class="posts">
@@ -17,14 +22,19 @@ const getPost = async () => {
     })
 }
 getPost();
+
 const showData = () => {
     setTimeout(() => {
+        loading.classList.remove("active")
         getPost();
-    }, 200)
+    }, 400)
 }
+
 window.addEventListener("scroll", () => {
     let { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+
     if (scrollTop + clientHeight >= scrollHeight) {
+        loading.classList.add("active")
         showData();
     }
 })
