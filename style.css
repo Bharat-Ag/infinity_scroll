@@ -20,6 +20,10 @@ a {
     color: white;
 }
 
+.main {
+    position: relative;
+}
+
 .navB {
     background: #27374D;
     padding: 2rem 10rem;
@@ -45,7 +49,7 @@ a {
 }
 
 .container h1 {
-    font-size: 5rem
+    font-size: 5rem;
 }
 
 .container .posts {
@@ -76,6 +80,53 @@ a {
 
 .container .details {
     font-size: 2rem;
+}
+
+.loading {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    gap: 1rem;
+}
+
+.loading.active {
+    display: flex;
+}
+
+.loading p {
+    font-size: 1.5rem;
+}
+
+.loading span {
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: black;
+    animation: loadg 300ms ease infinite;
+}
+
+.loading span:nth-of-type(1) {
+    animation-delay: 0;
+}
+
+.loading span:nth-of-type(2) {
+    animation-delay: 100ms;
+}
+
+.loading span:nth-of-type(3) {
+    animation-delay: 150ms;
+}
+
+@keyframes loadg {
+    50% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -161,6 +212,7 @@ a {
         font-size: 1.1rem;
     }
 }
+
 @media screen and (max-width:350px) {
 
     .navB {
