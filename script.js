@@ -7,7 +7,7 @@ let postCount = 1;
 
 const getPost = async () => {
 
-    const response = await fetch(`http://jsonplaceholder.typicode.com/posts?_limit=${postLimit}$_page=${pageCount}`)
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${postLimit}$_page=${pageCount}`)
     const data = await response.json();
 
     console.log(data);
