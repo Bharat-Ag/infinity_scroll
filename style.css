@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: rgb(216, 225, 235);
+    background-color: #DDE6ED;
 }
 
 a {
@@ -21,7 +21,7 @@ a {
 }
 
 .navB {
-    background: #171717;
+    background: #27374D;
     padding: 2rem 10rem;
     display: flex;
     justify-content: center;
@@ -50,7 +50,7 @@ a {
 
 .container .posts {
     margin: 5rem 0 0 0;
-    background: rgb(47, 113, 255);
+    background: #537188;
     color: white;
     padding: 2rem 5rem;
     border-radius: .5rem;
@@ -61,10 +61,11 @@ a {
 .post_id {
     width: 4rem;
     height: 4rem;
-    background: rgb(255, 122, 233);
+    background: #EEEEEE;
     display: grid;
     place-items: center;
     font-size: 2.5rem;
+    color: black;
 }
 
 .title {
@@ -160,8 +161,6 @@ a {
         font-size: 1.1rem;
     }
 }
-
-
 @media screen and (max-width:350px) {
 
     .navB {
